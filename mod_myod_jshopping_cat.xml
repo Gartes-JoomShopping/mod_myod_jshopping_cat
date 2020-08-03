@@ -25,13 +25,10 @@
 		<filename>mod_myod_jshopping_cat.xml</filename>
 		<filename>README.md</filename>
 		<filename>update.xml</filename>
-
-
-
-
-
 	</files>
-	
+	<updateservers>
+		<server type="extension" name="JoomShopping - MYOd jshopping categories By Gartes update">https://raw.githubusercontent.com/Gartes-JoomShopping/mod_myod_jshopping_cat/master/update.xml</server>
+	</updateservers>
 	<config>
 		<fields name="params">
 			<!-- Source Block -->
