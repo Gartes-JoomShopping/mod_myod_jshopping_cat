@@ -1,0 +1,120 @@
+ul.odcat,
+ul.odcat li,
+ul.odcat ul {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	width: 220px;
+	list-style: none;
+}
+
+ul.odcat:after {
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+
+ul.odcat li {
+	float: left;
+	display: block !important;
+	display: inline;
+	position: relative;
+}
+
+
+ul.odcat a {
+	border: 1px solid #FFF;
+	border-right-color: #527337;
+	border-bottom-color: #527337;
+	padding: 5px 6px;
+	display: block;
+	background: #A2C585;
+	color: #666;
+	font: normal 16px/22px Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	height: auto !important;
+	height: 1%;
+}
+
+
+ul.odcat a:hover,
+ul.odcat li:hover a,
+ul.odcat li.iehover a {
+background: #648B43;
+color: #FFF;
+}
+
+
+ul.odcat li:hover li a,
+ul.odcat li.iehover li a {
+background: #648B43;
+color: #BCD6A7;
+}
+
+
+ul.odcat li:hover li a:hover,
+ul.odcat li:hover li:hover a,
+ul.odcat li.iehover li a:hover,
+ul.odcat li.iehover li.iehover a {
+background: #648B43;
+color: #FFF;
+}
+
+
+ul.odcat li:hover li:hover li a,
+ul.odcat li.iehover li.iehover li a {
+background: #648B43;
+color: #BCD6A7;
+}
+
+
+ul.odcat li:hover li:hover li a:hover,
+ul.odcat li:hover li:hover li:hover a,
+ul.odcat li.iehover li.iehover li a:hover,
+ul.odcat li.iehover li.iehover li.iehover a {
+background: #648B43;
+color: #FFF;
+}
+
+
+ul.odcat li:hover li:hover li:hover li a,
+ul.odcat li.iehover li.iehover li.iehover li a {
+background: #648B43;
+color: #BCD6A7;
+}
+
+
+ul.odcat li:hover li:hover li:hover li a:hover,
+ul.odcat li.iehover li.iehover li.iehover li a:hover {
+background: #648B43;
+color: #FFF;
+}
+
+ul.odcat ul,
+ul.odcat ul ul,
+ul.odcat ul ul ul {
+display: none;
+position: absolute;
+top: 0;
+left: 220px;
+}
+
+
+ul.odcat li:hover ul ul,
+ul.odcat li:hover ul ul ul,
+ul.odcat li.iehover ul ul,
+ul.odcat li.iehover ul ul ul {
+display: none;
+}
+
+ul.odcat li:hover ul,
+ul.odcat ul li:hover ul,
+ul.odcat ul ul li:hover ul,
+ul.odcat li.iehover ul,
+ul.odcat ul li.iehover ul,
+ul.odcat ul ul li.iehover ul {
+display: block;
+}

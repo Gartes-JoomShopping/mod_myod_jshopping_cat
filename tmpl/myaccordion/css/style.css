@@ -1,0 +1,56 @@
+.odcat {
+	margin: 0px auto 20px;
+	padding: 0px;
+	width: 98%;
+	list-style: outside none none;
+	border: 1px solid rgb(249, 6, 6);
+	border-bottom: none;
+}
+.odcat li {
+	position:relative;
+}
+.odcat li a {
+	padding: 10px 10px 10px 20px;
+	display: block;
+	font-size: 14px;
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid rgb(249, 6, 6);
+}
+.odcat ul {
+	position: relative;
+	margin:0;
+	padding: 0;
+	display:none;
+	list-style: none;
+}
+.odcat ul li {
+	position:static;
+}
+.odcat ul a  {
+	padding: 5px 0 5px 30px;
+	font-size:12px;
+	color:#8b8b8b;
+	background-color:#ededed;
+}
+.odcat ul ul a  {
+	padding: 5px 0 5px 50px;
+	font-size:12px;
+	color:#8b8b8b;
+	background:#fff;
+}
+.odcat ul a.active {
+	font-weight: bold;
+	color: #000;
+}
+.odcat a.parent {
+	background-image: url(../images/menu-arr-down.png);
+	background-repeat: no-repeat;
+	background-position: 99% 50%;
+}
+.odcat ul a.parent {
+	background-image: url(../images/menu-arr-down1.png);
+	background-repeat: no-repeat;
+	background-position: 98% 50%;
+	opacity:0.8;
+}
