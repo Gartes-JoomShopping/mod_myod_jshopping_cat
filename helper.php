@@ -1,8 +1,11 @@
-<?php	 	
+<?php
+
+use Joomla\CMS\Helper\ModuleHelper;
+
 defined('_JEXEC') or die('Restricted access');
 error_reporting(E_ALL & ~E_NOTICE);
 
-class modMYODJShoppingCategoryHelper{
+class ModMyodJshoppingCatHelper{
 	public static function getTreeCats($category, $params, $active_id, $parent_id = 0, $deep = 1){
         $jshopConfig = JSFactory::getConfig();
 		
@@ -32,7 +35,7 @@ class modMYODJShoppingCategoryHelper{
 				// Show child
 			if(count($child)) {
 				$deep++;
-				$odcatarr = array_merge($odcatarr, modMYODJShoppingCategoryHelper::getTreeCats($category, $params, $active_id, $row->category_id, $deep));
+				$odcatarr = array_merge($odcatarr, ModMyodJshoppingCatHelper::getTreeCats($category, $params, $active_id, $row->category_id, $deep));
 				$deep--;
 			}
 		}
@@ -44,7 +47,27 @@ class modMYODJShoppingCategoryHelper{
 	{
 	    $category->load($active_id);
     	$categories_id = $category->getTreeParentCategories();
-	   return modMYODJShoppingCategoryHelper::getTreeCats($category, $params, $categories_id);
+	    return ModMyodJshoppingCatHelper::getTreeCats($category, $params, $categories_id);
     }
-	
+
+    public static function getMenuAjax (){
+        $data = [] ;
+        $module = ModuleHelper::getModule('myod_jshopping_cat');
+        $data['html'] = JModuleHelper::renderModule($module);
+        echo new JResponseJson($data);
+        die( );
+
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+

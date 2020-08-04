@@ -17,22 +17,58 @@ window.modMyodJshoppingCat = function () {
         Promise.all([
             self.load.css(this.Host+'modules/mod_myod_jshopping_cat/tmpl/'+this.__param.tmpl+'/css/style.css?'+this.__v) ,
             self.load.js(this.Host+'modules/mod_myod_jshopping_cat/tmpl/'+this.__param.tmpl+'/js/accordion.js?'+this.__v) ,
-
         ]).then(function ( a)
         {
-            self.fromTemplate('#__template_divId_div_top_menu');
-            initMenu2();
-            self.onClick();
-            $(self.__param.selectors.btn).off().on('click' , self.onClick )
+
+            if ( $('#__template_divId_div_top_menu_div' )[0] ){
+                self.fromTemplate('#__template_divId_div_top_menu_div');
+                initMenu2();
+                self.onClick();
+                $(self.__param.selectors.btn).off().on('click' , self.onClick );
+            }else{
+                var $divId = $("#divId") ;
+                var request = {
+                    'option' : 'com_ajax',
+                    'module' : 'myod_jshopping_cat',
+                    'method' : 'getMenu',
+                    'category_id' : self.__param.category_id ,
+                    'format' :  'json'
+
+                    /*'cmd'    : action,
+                    'data'   : value,
+                    'format' : '{$format}'*/
+                }
+                wgnz11.getModul("Ajax").then(function (Ajax) {
+                    // Не обрабатывать сообщения
+
+                    console.log( Ajax )
+                    Ajax.Loader = true ;
+                    console.log( Ajax )
+                    // Отправить запрос
+                    Ajax.send(request).then(function (r) {
+                        $divId.children().append(r.data.html);
+
+                        initMenu2();
+                        self.onClick();
+                        $(self.__param.selectors.btn).off().on('click' , self.onClick );
+                    },function(err) {
+                        console.error(err)
+                    })
+                });
+            }
+
+
+
         })
 
 
     };
     this.onClick = function () {
-        if ( jQuery("#divId").css('display') == 'none' ) {
-            jQuery("#divId").show();
+        var $divId = $("#divId")
+        if ( $divId.css('display') === 'none' ) {
+            $divId.show();
         } else {
-            jQuery("#divId").hide();
+            $divId.hide();
         }
     }
     this.Init();

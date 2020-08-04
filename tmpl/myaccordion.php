@@ -1,6 +1,5 @@
 <?php if (!empty($arResult)):?>
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
-<?php  
+<?php
 $url = 'modules/mod_myod_jshopping_cat/tmpl/myaccordion/js/myaccordion.js';
 $document->addScript(JURI::base() . $url);
 ?>

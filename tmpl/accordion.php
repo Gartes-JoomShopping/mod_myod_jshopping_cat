@@ -1,9 +1,17 @@
 <?php if (!empty($arResult)):?>
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
-<?php  
-//$url = 'modules/mod_myod_jshopping_cat/tmpl/accordion/js/accordion.js';
-//$document->addScript(JURI::base() . $url);
-?>
+<style>
+    .odcat a.parent {
+        background-image: url(<?= JURI::root() ?>modules/mod_myod_jshopping_cat/assets/images/menu-arr-down.png);
+        background-repeat: no-repeat;
+        background-position: 99% 50%;
+    }
+    .odcat ul a.parent {
+        background-image: url(<?= JURI::root() ?>modules/mod_myod_jshopping_cat/assets/images/menu-arr-down1.png);
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        opacity:0.8;
+    }
+</style>
 <ul id="nav_list_first" class="odcat <?php if($class){ echo $class;}?>">
 <?php 
 $previousLevel = 0;

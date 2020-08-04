@@ -43,14 +43,3 @@
 	font-weight: bold;
 	color: #000;
 }
-.odcat a.parent {
-	background-image: url(../images/menu-arr-down.png);
-	background-repeat: no-repeat;
-	background-position: 99% 50%;
-}
-.odcat ul a.parent {
-	background-image: url(../images/menu-arr-down1.png);
-	background-repeat: no-repeat;
-	background-position: 98% 50%;
-	opacity:0.8;
-}
