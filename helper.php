@@ -7,9 +7,32 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 class ModMyodJshoppingCatHelper{
 	public static function getTreeCats($category, $params, $active_id, $parent_id = 0, $deep = 1){
+
         $jshopConfig = JSFactory::getConfig();
 		
 		$rows  = $category->getSubCategories($parent_id, $params->get('category_sort', 'id'), $params->get('sort_order', 'asc'), 1);
+         
+		$skip_categories = $params->get('skip_categories' , false , 'RAW' ) ;
+        $skip_categoriesArr = explode(  ',' , $skip_categories ) ;
+        if( count( $skip_categoriesArr ) )
+        {
+            foreach ( $rows as $i => $row )
+            {
+                if( in_array( $row->category_id , $skip_categoriesArr ) )
+                {
+                      unset( $rows[$i] ) ;
+                }#END IF
+
+                
+            }#END FOREACH
+        }#END IF
+		/*echo'<pre>';print_r( $skip_categoriesArr );echo'</pre>'.__FILE__.' '.__LINE__;
+		echo'<pre>';print_r( $rows );echo'</pre>'.__FILE__.' '.__LINE__;
+		die(__FILE__ .' '. __LINE__ );*/
+
+
+
+
 		$odcatarr = array();
 		if(count($rows))
 		foreach($rows as $row) {

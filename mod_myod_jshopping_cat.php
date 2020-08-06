@@ -140,6 +140,9 @@ if( $params->get('cssstyle') == 1 )
 }
 
 
+
+
+
     $arResult = ModMyodJshoppingCatHelper::getCatsArray($params, $category_id, $category);
 
 

@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL</license>
 	<authorEmail>odlord@mail.ru</authorEmail>
 	<authorUrl>http://odlord.ru</authorUrl>
-	<version>1.1.3</version>
+	<version>1.1.4</version>
 	
 	<description>
 		<![CDATA[ <div style="font-size:10px;">
@@ -33,9 +33,7 @@
 		<fields name="params">
 			<!-- Source Block -->
 			<fieldset name="basic">
-				<field
-                    name="category_sort"
-                    type="list"
+				<field name="category_sort" type="list"
                     default="id"
                     label="MOD_OD_JSHOPPING_CATEGORY_SORT"
                     description="MOD_OD_JSHOPPING_CATEGORY_SORT_DESC">
@@ -43,42 +41,47 @@
 						<option value="name">MOD_OD_JSHOPPING_CATEGORY_SORT_NAME</option>
 						<option value="order">MOD_OD_JSHOPPING_CATEGORY_SORT_ORD</option>
                 </field>
-				<field
-                    name="sort_order"
-                    type="radio"
+				<field name="sort_order" type="radio"
                     default="asc"
                     label="MOD_OD_JSHOPPING_SORT_ORDER"
                     description="MOD_OD_JSHOPPING_SORT_ORDER_DESC">
 						<option value="asc">MOD_OD_JSHOPPING_SORT_ORDER_ASCENDING</option>
 						<option value="desc">MOD_OD_JSHOPPING_SORT_ORDER_DESCENDING</option>
                 </field>
-				<field
-                    name="counter"
-                    type="radio"
+				<field name="counter" type="radio"
                     default="0"
                     label="MOD_OD_JSHOPPING_SHOW_COUNTER"
                     description="MOD_OD_JSHOPPING_SHOW_COUNTER_DESC">
 						<option value="0">MOD_OD_JSHOPPING_SHOW_COUNTER_N</option>
 						<option value="1">MOD_OD_JSHOPPING_SHOW_COUNTER_Y</option>
                 </field>
-                <field
-                    name="cssstyle"
-                    type="radio"
+                <field name="cssstyle" type="radio"
                     default="1"
                     label="MOD_OD_JSHOPPING_SHOW_CSS"
                     description="MOD_OD_JSHOPPING_SHOW_CSS_DESC">
 						<option value="0">MOD_OD_JSHOPPING_SHOW_COUNTER_N</option>
 						<option value="1">MOD_OD_JSHOPPING_SHOW_COUNTER_Y</option>
                 </field>
-                <field
-                    name="display_img"
-                    type="radio"
+                <field name="display_img" type="radio"
                     default="1"
                     label="MOD_OD_JSHOPPING_SHOW_DIMG"
                     description="MOD_OD_JSHOPPING_SHOW_DIMG_DESC">
 						<option value="0">MOD_OD_JSHOPPING_SHOW_COUNTER_N</option>
 						<option value="1">MOD_OD_JSHOPPING_SHOW_COUNTER_Y</option>
                 </field>
+				<field name="skip_categories"
+					type="text"
+					default=""
+					class="skip_categories "
+					readonly=""
+					required=""
+					label="MOD_MYOD_JSHOPPING_CAT_SKIP_CATEGORIES"
+					description="MOD_MYOD_JSHOPPING_CAT_SKIP_CATEGORIES_DESC"
+					showon=""
+					hint=""
+					filter="raw" />
+					
+					
 			</fieldset>
 			
 			<!-- Advanced Block -->
